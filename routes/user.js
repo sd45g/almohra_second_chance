@@ -24,12 +24,6 @@ router.post('/update-profile', authMiddleware, [
   body('email').optional().isEmail().withMessage('Please enter a valid email address')
 ], authController.updateProfile);
 
-// مسار تغيير كلمة المرور
-// router.post('/change-password', authMiddleware, [
-//   // التحقق من صحة كلمة المرور الحالية وكلمة المرور الجديدة
-//   body('password').notEmpty().withMessage('Current password is required'),
-//   body('newPassword').isLength({ min: 6 }).withMessage('New password must be at least 6 characters long')
-// ], authController.changePassword);
 
 // إضافة مستخدم جديد (يجب أن يكون الأدمن فقط)
 router.get('/customer-count', authController.getCustomerCount); // إضافة المسار الجديد
